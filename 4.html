@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Didático: Análise Orientada a Objetos (AOO)</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #e67e22; margin-top: 30px; }
+        .container { background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-family: Consolas, monospace; }
+        pre { background: #333; color: #fff; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .pilares { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+        .pilar { background: #3498db; color: white; padding: 15px; border-radius: 5px; width: 45%; box-sizing: border-box; margin-bottom: 10px; }
+        .quiz { background: #ecf0f1; padding: 20px; margin-top: 40px; border-radius: 8px; border-left: 5px solid #2c3e50; }
+        .question { margin-bottom: 15px; }
+        button { background: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #2ecc71; }
+        .correct { color: green; font-weight: bold; }
+        .incorrect { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Análise Orientada a Objetos (AOO)</h1>
+        <p>A Análise Orientada a Objetos (AOO) é uma abordagem de desenvolvimento de software que modela um sistema como um grupo de objetos que interagem entre si, aproximando a estrutura computacional do mundo real.</p>
+
+        <h2>1. Conceitos Fundamentais</h2>
+        <ul>
+            <li><strong>Classe:</strong> Um "molde" ou blueprint que define atributos (características) e métodos (comportamentos) de objetos semelhantes.</li>
+            <li><strong>Objeto:</strong> Uma instância concreta de uma classe. Ex: <code>Carro (Classe) -> MeuFusca (Objeto)</code>.</li>
+        </ul>
+
+        <h2>2. Os 4 Pilares da POO/AOO</h2>
+        <div class="pilares">
+            <div class="pilar"><strong>Encapsulamento:</strong> Esconder detalhes internos e proteger dados.</div>
+            <div class="pilar"><strong>Herança:</strong> Reutilizar atributos/métodos de classes pai (superclasse) para classes filhas.</div>
+            <div class="pilar"><strong>Polimorfismo:</strong> Objetos diferentes respondendo à mesma mensagem de formas distintas.</div>
+            <div class="pilar"><strong>Abstração:</strong> Focar nos aspectos essenciais do objeto para o contexto atual.</div>
+        </div>
+
+        <h2>3. Exemplo Prático (UML)</h2>
+        <p>A Linguagem de Modelagem Unificada (UML) é usada para entender esses conceitos.</p>
+        <pre>
++-------------------------+
+
+|      Funcionario        |  <-- Classe
++-------------------------+
+
+| - nome: String          |  <-- Atributo (Encapsulado)
+| - salario: double       |
++-------------------------+
+
+| + trabalhar(): void     |  <-- Método
+| + calcularBonus(): void |
++-------------------------+
+        </pre>
+
+        <hr>
+
+        <h2>Avaliação: O que você aprendeu?</h2>
+        <form id="quizForm" class="quiz">
+            <div class="question">
+                <p><strong>1. O que é um objeto na análise orientada a objetos?</strong></p>
+                <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">Uma classe genérica.</label><br>
+                <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">Uma instância concreta de uma classe.</label><br>
+                <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">Apenas um método de uma classe.</label>
+            </div>
+
+            <div class="question">
+                <p><strong>2. Qual pilar protege os dados internos de uma classe?</strong></p>
+                <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">Herança.</label><br>
+                <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">Polimorfismo.</label><br>
+                <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">Encapsulamento.</label>
+            </div>
+
+            <button type="button" onclick="checkAnswers()">Enviar Feedback </button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            let resultText = "";
+
+            if (q1 && q1.value === "b") score++;
+            if (q2 && q2.value === "c") score++;
+
+            resultText = "Você acertou " + score + " de 2 perguntas.";
+            if (score === 2) resultText += " Parabéns!";
+            
+            document.getElementById("result").innerHTML = resultText;
+            document.getElementById("result").style.fontWeight = "bold";
+        }
+    </script>
+</body>
+</html>
