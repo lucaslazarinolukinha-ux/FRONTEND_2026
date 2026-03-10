@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo Confuso da Computação</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        /* MENU */
+        nav {
+            background: #1a1a1a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 12px;
+        }
+
+        nav ul li {
+            margin: 5px 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #4da3ff;
+            border-bottom: 2px solid #4da3ff;
+        }
+
+        /* CONTEÚDO */
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            min-height: 400px;
+        }
+
+        /* LOGICA DE EXIBIÇÃO DAS ABAS */
+        .tab-content {
+            display: none; /* Esconde todas por padrão */
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block; /* Mostra apenas a ativa */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            border-left: 5px solid #2a5298;
+            padding-left: 10px;
+        }
+
+        /* CARDS */
+        article {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* TABELA */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table th {
+            background: #2a5298;
+            color: white;
+            padding: 12px;
+        }
+
+        table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        table tr:nth-child(even) {
+            background: #f7f7f7;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media(max-width:600px) {
+            header h1 { font-size: 1.6em; }
+            nav ul { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Arquivo (Quase) Perdido da Ciência da Computação</h1>
+        <p>Uma coletânea de fatos curiosos da computação</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a onclick="openTab(event, 'pioneiros')" class="tab-link active">Pioneiros</a></li>
+            <li><a onclick="openTab(event, 'bugs')" class="tab-link">Bugs</a></li>
+            <li><a onclick="openTab(event, 'linguagens')" class="tab-link">Linguagens</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="pioneiros" class="tab-content active">
+            <h2>Pioneiros</h2>
+            <article>
+                <h3>Ada Lovelace</h3>
+                <p>Considerada a primeira programadora da história.</p>
+            </article>
+            <article>
+                <h3>Alan Turing</h3>
+                <p>Criador da Máquina de Turing.</p>
+            </article>
+        </section>
+
+        <section id="bugs" class="tab-content">
+            <h2>Histórias de Bugs</h2>
+            <article>
+                <h3>Primeiro bug real</h3>
+                <p>Uma mariposa encontrada em um computador em 1947 por Grace Hopper.</p>
+            </article>
+        </section>
+
+        <section id="linguagens" class="tab-content">
+            <h2>Linguagens</h2>
+            <table>
+                <tr>
+                    <th>Linguagem</th>
+                    <th>Ano</th>
+                </tr>
+                <tr>
+                    <td>COBOL</td>
+                    <td>1959</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>1972</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>1991</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Arquivo Confuso da Computação</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // 1. Esconde todas as seções com a classe "tab-content"
+            const contents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+
+            // 2. Remove a classe "active" de todos os links do menu
+            const links = document.getElementsByClassName("tab-link");
+            for (let i = 0; i < links.length; i++) {
+                links[i].classList.remove("active");
+            }
+
+            // 3. Mostra a aba atual e adiciona a classe "active" ao link clicado
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
