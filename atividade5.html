@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Arquivo Perdido da Ciência da Computação</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Segoe UI, Arial, sans-serif;
+background:linear-gradient(120deg,#e9eef5,#f6f8fb);
+color:#333;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(90deg,#111,#222);
+color:white;
+padding:25px;
+text-align:center;
+box-shadow:0 3px 8px rgba(0,0,0,0.2);
+}
+
+header h1{
+font-size:28px;
+margin-bottom:5px;
+}
+
+/* LAYOUT */
+
+.container{
+display:flex;
+min-height:100vh;
+}
+
+/* MENU */
+
+nav{
+width:220px;
+background:white;
+padding:20px;
+border-right:1px solid #ddd;
+position:sticky;
+top:0;
+height:100vh;
+box-shadow:2px 0 10px rgba(0,0,0,0.05);
+}
+
+nav a{
+display:block;
+padding:10px;
+margin-bottom:8px;
+border-radius:6px;
+color:#333;
+text-decoration:none;
+font-weight:500;
+transition:0.2s;
+}
+
+nav a:hover{
+background:#0077cc;
+color:white;
+}
+
+/* MAIN */
+
+main{
+flex:1;
+padding:40px;
+max-width:1100px;
+margin:auto;
+}
+
+section{
+margin-bottom:50px;
+}
+
+h2{
+margin-bottom:15px;
+color:#222;
+}
+
+/* CARDS */
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* TABLE */
+
+table{
+border-collapse:collapse;
+margin-top:15px;
+background:white;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+border-radius:6px;
+overflow:hidden;
+}
+
+table th{
+background:#0077cc;
+color:white;
+}
+
+table th, table td{
+padding:10px 15px;
+border-bottom:1px solid #ddd;
+text-align:left;
+}
+
+/* FORMULÁRIO */
+
+form{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+max-width:500px;
+margin-top:10px;
+}
+
+form label{
+display:block;
+margin-top:12px;
+font-weight:600;
+}
+
+form input,
+form textarea,
+form select{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+transition:0.2s;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus{
+border-color:#0077cc;
+outline:none;
+box-shadow:0 0 4px rgba(0,119,204,0.3);
+}
+
+form textarea{
+height:90px;
+resize:vertical;
+}
+
+/* CHECKBOX */
+
+form input[type="checkbox"]{
+width:auto;
+margin-right:5px;
+}
+
+/* BOTÃO */
+
+button{
+margin-top:15px;
+padding:10px 20px;
+background:#0077cc;
+border:none;
+border-radius:6px;
+color:white;
+font-size:14px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#005fa3;
+}
+
+/* PRE */
+
+pre{
+background:#111;
+color:#00ff9c;
+padding:10px;
+border-radius:6px;
+margin-top:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:#ddd;
+padding:25px;
+text-align:center;
+font-size:13px;
+line-height:1.6;
+margin-top:40px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.container{
+flex-direction:column;
+}
+
+nav{
+width:100%;
+height:auto;
+display:flex;
+overflow-x:auto;
+}
+
+nav a{
+margin-right:10px;
+}
+
+main{
+padding:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Arquivo (Quase) Perdido da Ciência da Computação</h1>
+<p>Uma coletânea caótica de fatos históricos, curiosos e inesperados.</p>
+</header>
+
+<div class="container">
+
+<nav>
+<a href="#pioneiros">Pioneiros</a>
+<a href="#bugs">Bugs</a>
+<a href="#internet">Internet</a>
+<a href="#linguagens">Linguagens</a>
+<a href="#linha">Linha do Tempo</a>
+<a href="#inuteis">Fatos Inúteis</a>
+</nav>
+
+<main>
+
+<section id="pioneiros">
+
+<h2>Pioneiros Esquecidos</h2>
+
+<div class="card">
+<b>Ada Lovelace</b><br>
+Considerada a primeira programadora da história.
+</div>
+
+<div class="card">
+<b>Alan Turing</b><br>
+Criador do conceito de Máquina de Turing.<br><br>
+<i>"Podemos ver apenas um pouco do futuro, mas o suficiente para perceber que há muito a fazer."</i>
+<p><b>Curiosidade:</b> Durante décadas o trabalho de Turing foi mantido em segredo.</p>
+</div>
+
+</section>
+
+<section id="bugs">
+
+<h2>Histórias de Bugs</h2>
+
+<div class="card">
+<b>O Primeiro Bug Real</b><br>
+Uma mariposa encontrada em um computador em 1947.
+</div>
+
+<div class="card">
+<b>Vírus Creeper</b><br>
+Primeiro vírus da história (1971).<br><br>
+
+Mensagem exibida:
+
+<pre>
+I'M THE CREEPER : CATCH ME IF YOU CAN
+</pre>
+
+</div>
+
+</section>
+
+<section id="internet">
+
+<h2>Curiosidades da Internet</h2>
+
+<div class="card">
+<b>Primeiro Website</b><br>
+Criado em 1991 por Tim Berners-Lee.
+</div>
+
+<div class="card">
+<b>ARPANET</b><br>
+A precursora da internet moderna.<br><br>
+Primeira mensagem enviada: "LO"<br>
+O sistema caiu antes de completar "LOGIN"
+</div>
+
+<div class="card">
+<b>Emojis ASCII</b><br>
+:-)  ;-)  :-D
+</div>
+
+</section>
+
+<section id="linguagens">
+
+<h2>Linguagens de Programação</h2>
+
+<div class="card"><b>COBOL</b><br>Ainda usado em sistemas bancários.</div>
+<div class="card"><b>C</b><br>Base para muitos sistemas operacionais.</div>
+<div class="card"><b>HTML</b><br>Não é linguagem de programação, mas estrutura a web.</div>
+
+<h3>Linguagens e Ano de Criação</h3>
+
+<table>
+
+<tr>
+<th>Linguagem</th>
+<th>Ano</th>
+</tr>
+
+<tr>
+<td>COBOL</td>
+<td>1959</td>
+</tr>
+
+<tr>
+<td>C</td>
+<td>1972</td>
+</tr>
+
+<tr>
+<td>Python</td>
+<td>1991</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="linha">
+
+<h2>Linha do Tempo Aleatória</h2>
+
+<div class="card">
+
+1837 - Máquina Analítica<br>
+1946 - ENIAC<br>
+1969 - ARPANET<br>
+1991 - Primeiro site<br>
+2007 - Popularização dos smartphones
+
+</div>
+
+</section>
+
+<section id="inuteis">
+
+<h2>Fatos Inúteis da Computação</h2>
+
+<div class="card">
+<b>Spam vem de presunto</b><br>
+O termo "spam" vem de um esquete do Monty Python onde a palavra SPAM era repetida várias vezes.
+</div>
+
+<div class="card">
+<b>Bluetooth tem nome viking</b><br>
+Nome inspirado no rei Harald Bluetooth.
+</div>
+
+<div class="card">
+<b>Bug é literalmente bug</b><br>
+O famoso inseto encontrado no Mark II era uma mariposa.
+</div>
+
+<h3>Cadastro de Inutilidades</h3>
+
+<form>
+
+<label>Nome:</label>
+<input type="text">
+
+<label>Fato inútil:</label>
+<textarea></textarea>
+
+<label>Grau de inutilidade:</label>
+<input type="number">
+
+<label>
+<input type="checkbox">
+Confirmo que este fato é extremamente inútil
+</label>
+
+<button>Enviar</button>
+
+</form>
+
+</section>
+
+</main>
+
+</div>
+
+<footer>
+
+© 2026 Instituto Internacional de Informações Desnecessárias<br>
+Email: inutilidades@caosdigital.com<br><br>
+
+© 2026 Arquivo Confuso da Computação<br>
+Contato: contato@computacao.com<br><br>
+
+© 2026 Arquivo Ultra-Secreto da Computação<br>
+contato@ultrasecreto.dev
+
+</footer>
+
+</body>
+</html>
