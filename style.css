@@ -1,0 +1,40 @@
+body{
+    background-color: lightgreen;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color:red;
+}
+header{
+     text-align: center;
+    margin-bottom: 30px;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+}
+nav ul li{
+    display: inline;
+   margin: 0 10px;
+}
+nav a{
+    text-decoration: none;
+    color:crimson;
+    font-weight: bold;
+}
+.container-secao{
+    background-color: darkblue;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.container-secao h2 {
+    font-size: 24px;
+    color: #0066cc;
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.6;
+}
