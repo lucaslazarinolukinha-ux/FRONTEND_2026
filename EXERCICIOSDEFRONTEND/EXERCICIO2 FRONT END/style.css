@@ -1,0 +1,10 @@
+ body { 
+    font-family: sans-serif; padding: 20px;
+    background-color: blue;
+ }
+        .converter { 
+            display: flex; gap: 10px; align-items: center;
+         }
+        input { 
+            padding: 8px; width: 100px;
+         }

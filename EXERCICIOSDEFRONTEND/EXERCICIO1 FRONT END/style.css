@@ -1,0 +1,5 @@
+ body { font-family: sans-serif; padding: 20px; }
+        .valido { color: green; font-weight: bold; }
+        .invalido { color: red; font-weight: bold; }
+        input, button { padding: 10px; margin: 5px;
+        text-align: center; }

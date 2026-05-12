@@ -1,0 +1,9 @@
+ body {
+     font-family: sans-serif; padding: 20px;
+     }
+        select, input { 
+            padding: 10px; margin-bottom: 10px; display: block; width: 200px; 
+        }
+        .resumo { 
+            margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px; 
+        }
