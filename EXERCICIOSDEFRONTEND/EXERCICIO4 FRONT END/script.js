@@ -1,16 +1,50 @@
- const valorTaxaBandeira = valorVenda * taxaBandeiraPerc;
-            // Juros Simples: 0.35% (0.0035) ao mês
-            const jurosSimples = valorVenda * (0.0035 * parcelas);
-            const taxaFixa = 12.50 * parcelas; // Taxa mensal de 12,50
-            const valorTotal = valorVenda + valorTaxaBandeira + jurosSimples + taxaFixa;
-            const valorParcela = valorTotal / parcelas;
+function calcularTaxas() {
+  const bandeira = document.getElementById("bandeira").value;
+  const valorVenda = Number(document.getElementById("valor").value);
+  const parcelas = Number(document.getElementById("parcelas").value);
+  const resumo = document.getElementById("resumo");
 
-            resumo.innerHTML = `
-                <strong>Resumo:</strong><br>
-                Valor da Taxa (${bandeira}): R$ ${valorTaxaBandeira.toFixed(2)}<br>
-                Juros (0.35% a.m): R$ ${jurosSimples.toFixed(2)}<br>
-                Taxa Fixa (12.50/mês): R$ ${taxaFixa.toFixed(2)}<br>
-                <strong>Valor Total: R$ ${valorTotal.toFixed(2)}</strong><br>
-                <strong>Parcelas: ${parcelas}x de R$ ${valorParcela.toFixed(2)}</strong>
-            `;
-        }
+  if (!valorVenda || !parcelas) {
+    resumo.innerHTML = "Preencha todos os campos!";
+    return;
+  }
+
+  // Taxa da bandeira usando SWITCH (pedido no exercício)
+  let taxaBandeiraPerc;
+
+  switch (bandeira) {
+    case "visa":
+      taxaBandeiraPerc = 0.02;
+      break;
+    case "master":
+      taxaBandeiraPerc = 0.0185;
+      break;
+    case "elo":
+      taxaBandeiraPerc = 0.03;
+      break;
+  }
+
+  // Taxa da bandeira
+  const valorTaxaBandeira = valorVenda * taxaBandeiraPerc;
+
+  // Juros simples 0.35% ao mês
+  const jurosSimples = valorVenda * (0.0035 * parcelas);
+
+  // Taxa fixa mensal
+  const taxaFixa = 12.5 * parcelas;
+
+  // Total
+  const valorTotal = valorVenda + valorTaxaBandeira + jurosSimples + taxaFixa;
+
+  // Valor por parcela
+  const valorParcela = valorTotal / parcelas;
+
+  resumo.innerHTML = `
+    <h3>Resumo da Venda</h3>
+    Taxa da Bandeira: R$ ${valorTaxaBandeira.toFixed(2)} <br>
+    Juros Totais: R$ ${jurosSimples.toFixed(2)} <br>
+    Taxa Fixa: R$ ${taxaFixa.toFixed(2)} <br><br>
+    <strong>Total: R$ ${valorTotal.toFixed(2)}</strong><br>
+    ${parcelas}x de R$ ${valorParcela.toFixed(2)}
+  `;
+}
