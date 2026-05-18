@@ -1,5 +1,9 @@
 // Função para adicionar convidado
-    function addGuest() {
+    
+
+
+
+function addGuest() {
         const input = document.getElementById('guestName');
         const name = input.value.trim(); // .trim() para evitar vazios
         
@@ -8,7 +12,7 @@
             return;
         }
 
-        const list = document.getElementById('guestList');
+        const list = document.getElementById('guestlist');
         
         // Criar elemento li
         const li = document.createElement('li');
@@ -58,7 +62,7 @@
     }
 
     // Adicionar ao apertar "Enter"
-    document.getElementById('guestName').addEventListener('keypress', function (e) {
+    document.getElementById('guestName').addEventListener('keydown', function (e) {
         if (e.key === 'Enter') {
             addGuest();
         }
